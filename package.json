@@ -1,0 +1,30 @@
+{
+  "name": "mqtt-notify",
+  "version": "1.0.0",
+  "description": "MQTT to system notification bridge",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gknapp/mqtt-notify.git"
+  },
+  "keywords": [
+    "mqtt",
+    "notifications"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gknapp/mqtt-notify/issues"
+  },
+  "homepage": "https://github.com/gknapp/mqtt-notify#readme",
+  "devDependencies": {
+    "electron": "16.0.4"
+  },
+  "dependencies": {
+    "@meetfranz/electron-notification-state": "^1.0.0"
+  }
+}
