@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require("electron")
-const { notify } = require("./src/main/notify")
-const { addToTray } = require("./src/main/tray")
+const { notify } = require("./notify")
+const { addToTray } = require("./tray")
 
 let trayIcon = null
 
@@ -18,10 +18,16 @@ function createWindow() {
     autoHideMenuBar: true,
     height: 480,
     width: 640,
-    show: false
+    // show: false
   }
   const win = new BrowserWindow(opts)
-  win.loadFile("src/assets/index.html")
+  // win.loadFile("src/assets/index.html")
+  win.loadURL("http://localhost:3000")
+
+  if (!app.isPackaged) { // dev
+    win.webContents.openDevTools({ mode: "detach" })
+  }
+
   return bindWindowListeners(win)
 }
 

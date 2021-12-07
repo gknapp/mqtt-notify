@@ -2,9 +2,10 @@
   "name": "mqtt-notify",
   "version": "1.0.0",
   "description": "MQTT to system notification bridge",
-  "main": "index.js",
+  "main": "src/main/index.js",
   "scripts": {
-    "start": "electron .",
+    "build": "webpack",
+    "start": "concurrently \"webpack-dev-server\" \"wait-on http://localhost:3000 && electron .\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,9 +23,29 @@
   },
   "homepage": "https://github.com/gknapp/mqtt-notify#readme",
   "devDependencies": {
-    "electron": "16.0.4"
+    "@babel/core": "7.16.0",
+    "@babel/eslint-parser": "7.16.3",
+    "@babel/preset-env": "7.16.4",
+    "@babel/preset-react": "7.16.0",
+    "babel-loader": "8.2.3",
+    "concurrently": "6.4.0",
+    "css-loader": "6.5.1",
+    "electron": "16.0.4",
+    "eslint": "7.32.0",
+    "eslint-plugin-react": "7.27.1",
+    "eslint-webpack-plugin": "3.1.1",
+    "html-loader": "3.0.1",
+    "html-webpack-plugin": "5.5.0",
+    "style-loader": "3.3.1",
+    "wait-on": "6.0.0",
+    "webpack": "5.65.0",
+    "webpack-cli": "4.9.1",
+    "webpack-dev-server": "4.6.0"
   },
   "dependencies": {
-    "@meetfranz/electron-notification-state": "^1.0.0"
+    "@meetfranz/electron-notification-state": "^1.0.0",
+    "@mui/material": "^5.2.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   }
 }
